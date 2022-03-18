@@ -1,0 +1,113 @@
+commit d0ecb213f5e4006f069b850a2cc4bc5ff0790639
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 14:21:55 2022 +0200
+
+    Uusi nimi ja poisto
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 475bc84da5aabff2cc5c4eabd41db626737987ac
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 14:15:06 2022 +0200
+
+    tiedostojen lisäys
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 8e32d8a4a923238aadf5efdd48f8013673212079
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 14:05:43 2022 +0200
+
+    ekan ja kolmannen muutokset
+
+ eka.txt    | 17 ++++++-----------
+ kolmas.txt |  4 +++-
+ 2 files changed, 9 insertions(+), 12 deletions(-)
+
+commit e5a25ffde9f2edc926ddf7b4077587b9facd8d7b
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 13:58:40 2022 +0200
+
+    uudelleennimeäminen
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4316ef11ea21651e71efc7ed73e28104c267ce59
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 13:53:53 2022 +0200
+
+    Toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit b286a819213e2953692319a92aafd326480d84f1
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 13:48:24 2022 +0200
+
+    lisää tekstiä tiedosto.txt
+
+ tiedosto.txt | 19 ++++++++++---------
+ 1 file changed, 10 insertions(+), 9 deletions(-)
+
+commit 290a8fc871aa6facedc83ba5701c75579bd8dcbd
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 13:44:38 2022 +0200
+
+    Paljon tekstiä lisätty
+
+ tiedosto.txt | 23 ++++++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+
+commit a299cb8815787c60dd4d20015ac6b07b743bbe4e
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 13:33:39 2022 +0200
+
+    Neljäs tiedosto luotu
+
+ stuff/neljas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6d79504984c773c355f06683ba0ba1a17aaeb4b6
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 13:30:58 2022 +0200
+
+    Toisen ja kolmannen tiedoston muutokset
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit cf76ebd47c04c47b034f5e6508b12fdb58de402e
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 13:28:10 2022 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit bcdf5a688fe56181ff5a873875ac24eb4c48fa7a
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 13:18:08 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit cfcf7da021d5869faef3ec8a0768c5d643dcc97d
+Author: Niklas Nygård <niklas.nygard01@gmail.com>
+Date:   Fri Mar 18 13:13:10 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
