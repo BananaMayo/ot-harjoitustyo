@@ -1,3 +1,5 @@
+Tehtävä 17 muutos. Kohta tapahtuu
+
 commit d0ecb213f5e4006f069b850a2cc4bc5ff0790639
 Author: Niklas Nygård <niklas.nygard01@gmail.com>
 Date:   Fri Mar 18 14:21:55 2022 +0200
