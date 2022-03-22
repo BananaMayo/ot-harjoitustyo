@@ -8,3 +8,5 @@
 [komentorivi.txt](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 This is very random!?
+
+Tehtävä 17 muutos.
