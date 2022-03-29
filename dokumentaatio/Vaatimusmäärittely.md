@@ -18,3 +18,8 @@ Sovellus tulee olemaan Pygame:lla toteutettu peli. Peli tulee olemaan labyrintti
 
 ### Loppusivu
 - Kun pelaaja on saavuttanut maalin saa hän näkyvilleen loppusivun jossa lukee pelaajan aika
+
+## Jatkokehitysideoita
+- Peliin lisätään tasoja, jotka vaihtelevat vaikeustasossaan
+- Peliin lisätään hahmoja joista pelaaja voi valita ennen varsinaisen tason/ pelin käynnistämistä
+- Pelin ulkonäkö saadaan vaihtelemaan tasojen mukaan
