@@ -1,38 +1,30 @@
 import os
 import sys
-import random
+#import random
 import pygame
 
 def Game1():
-    # Pygamen alustaminen
     os.environ["SDL_VIDEO_CENTERED"] = "1"
     pygame.init()
-
-    # Näyttöasetukset
     pygame.display.set_caption("Get to the red square!")
     screen = pygame.display.set_mode((640, 480))
+    
+    walls = []
 
-    # Pelaajan luokka
     class Player(object):
-
         def __init__(self):
             self.rect = pygame.Rect(32, 32, 16, 16)
 
         def move(self, dx, dy):
-
-            #Liikkimunen ja törmäys
             if dx != 0:
                 self.advance_single_axis(dx, 0)
             if dy != 0:
                 self.advance_single_axis(0, dy)
 
-        def advance_single_axis(self, dx, dy):
-
-            # Hahmon suunnat
+        def advance_single_axis(self, dx, dy):           
             self.rect.x += dx
             self.rect.y += dy
-
-            #Seiniin törmääminen
+        
             for wall in walls:
                 if self.rect.colliderect(wall.rect):
                     if dx > 0: 
@@ -42,19 +34,13 @@ def Game1():
                     if dy > 0: 
                         self.rect.bottom = wall.rect.top
                     if dy < 0: 
-                        self.rect.top = wall.rect.bottom
-
-    
+                        self.rect.top = wall.rect.bottom  
     class Wall(object):
-
         def __init__(self, pos):
             walls.append(self)
-            self.rect = pygame.Rect(pos[0], pos[1], 16, 16)
-
-    clock = pygame.time.Clock()
-    walls = [] 
+            self.rect = pygame.Rect(pos[0], pos[1], 16, 16) 
     player = Player() 
-
+    clock = pygame.time.Clock()
     level = [
         "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
         "HHH   H   H           H                H",
@@ -111,6 +97,11 @@ def Game1():
                 if event.key == pygame.K_ESCAPE:
                     running = False
 
+        if player.rect.colliderect(end_rect):
+            #end_page()
+            pygame.quit()
+            sys.exit()
+
         key = pygame.key.get_pressed()
         if key[pygame.K_LEFT]:
             player.move(-2, 0)
@@ -120,13 +111,6 @@ def Game1():
             player.move(0, -2)
         if key[pygame.K_DOWN]:
             player.move(0, 2)
-
-
-
-        if player.rect.colliderect(end_rect):
-            #end_page()
-            pygame.quit()
-            sys.exit()
 
         screen.fill((79, 79, 79))
         for wall in walls:
@@ -138,4 +122,4 @@ def Game1():
 
 
 
-    #pygame.quit()
+

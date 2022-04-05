@@ -26,16 +26,12 @@ click = False
 
 def main_menu():
     while True:
-
         screen.fill((39, 39, 39))
-
 
         menu_text('main menu', fontti, (255, 255, 255), screen, 285, 20)
 
         mx, my = pygame.mouse.get_pos()
-
         game1_button = pygame.Rect(245, 120, 150, 30)
-
 
         if game1_button.collidepoint((mx, my)):
             if click:
