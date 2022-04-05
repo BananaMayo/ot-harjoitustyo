@@ -35,16 +35,16 @@ def Game1():
             #Seiniin törmääminen
             for wall in walls:
                 if self.rect.colliderect(wall.rect):
-                    if dx > 0: # Moving right; Hit the left side of the wall
+                    if dx > 0: 
                         self.rect.right = wall.rect.left
-                    if dx < 0: # Moving left; Hit the right side of the wall
+                    if dx < 0: 
                         self.rect.left = wall.rect.right
-                    if dy > 0: # Moving down; Hit the top side of the wall
+                    if dy > 0: 
                         self.rect.bottom = wall.rect.top
-                    if dy < 0: # Moving up; Hit the bottom side of the wall
+                    if dy < 0: 
                         self.rect.top = wall.rect.bottom
 
-    # Nice class to hold a wall rect
+    
     class Wall(object):
 
         def __init__(self, pos):
@@ -52,8 +52,8 @@ def Game1():
             self.rect = pygame.Rect(pos[0], pos[1], 16, 16)
 
     clock = pygame.time.Clock()
-    walls = [] # List to hold the walls
-    player = Player() # Create the player
+    walls = [] 
+    player = Player() 
 
     level = [
         "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
@@ -133,7 +133,6 @@ def Game1():
             pygame.draw.rect(screen, (3, 3, 3), wall.rect)
         pygame.draw.rect(screen, (255, 0, 0), end_rect)
         pygame.draw.rect(screen, (255, 200, 0), player.rect)
-        # gfxdraw.filled_circle(screen, 255, 200, 5, (0,128,0))
         pygame.display.flip()
         clock.tick(360)
 
