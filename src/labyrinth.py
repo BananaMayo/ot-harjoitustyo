@@ -55,7 +55,6 @@ def Game1():
     walls = [] # List to hold the walls
     player = Player() # Create the player
 
-    # Holds the level layout in a list of strings.
     level = [
         "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
         "HHH   H   H           H                H",
@@ -89,7 +88,6 @@ def Game1():
         "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
     ]
 
-    # Parse the level string above. H = wall, E = exit
     x = y = 0
     for row in level:
         for col in row:
@@ -113,7 +111,6 @@ def Game1():
                 if event.key == pygame.K_ESCAPE:
                     running = False
 
-        # Move the player if an arrow key is pressed
         key = pygame.key.get_pressed()
         if key[pygame.K_LEFT]:
             player.move(-2, 0)
@@ -126,13 +123,11 @@ def Game1():
 
 
 
-        # Just added this to make it slightly fun ;)
         if player.rect.colliderect(end_rect):
             #end_page()
             pygame.quit()
             sys.exit()
 
-        # Draw the scene
         screen.fill((79, 79, 79))
         for wall in walls:
             pygame.draw.rect(screen, (3, 3, 3), wall.rect)

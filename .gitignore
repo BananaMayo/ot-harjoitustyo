@@ -1,2 +1,5 @@
 .pytest_cache
 __pycache__
+/etc/apt/sources.list.d/heroku.list
+.coverage
+htmlcov
