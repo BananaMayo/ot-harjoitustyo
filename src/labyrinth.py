@@ -115,8 +115,8 @@ def Game1():
         screen.fill((79, 79, 79))
         for wall in walls:
             pygame.draw.rect(screen, (3, 3, 3), wall.rect)
-        pygame.draw.rect(screen, (255, 0, 0), end_rect)
-        pygame.draw.rect(screen, (255, 200, 0), player.rect)
+        pygame.draw.rect(screen, (72, 61, 139), end_rect)
+        pygame.draw.rect(screen, (238, 48, 167), player.rect)
         pygame.display.flip()
         clock.tick(360)
 
