@@ -1,8 +1,8 @@
-#Changelog
+# Changelog
 
-##Viikko 3
+## Viikko 3
 
-*Peliä varten on tehty alustava pohja
+* Peliä varten on tehty alustava pohja
   - Sisältää aloitus-sivun
   - Labyrinttipelin (Game1) jossa pelaajan hahmo(keltainen) sekä uloskäynti (punainen)
   - Lopetussivuston koodipohja on lisätty mutta vielä vaiheessa
