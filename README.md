@@ -39,3 +39,8 @@ $ poetry run invoke coverage-report
 ```
 Raportti löytyy hakemistosta ***htmlcov***
 
+### Pylint
+Tiedoston .pylintrc määrittelemät tarkistukset voi suorittaa komennolla:
+```
+$ poetry run invoke lint
+```
