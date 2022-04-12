@@ -10,3 +10,11 @@
 * Käyttäjä pystyy navigoimaan itsensä peliin painamalla pelin painiketta
 * Käyttäjä pystyy pelaamaan labyrintti peliä
 * Testattu että pelaajan sijainti täsmää
+
+## Viikko 4
+
+* Peli on jaettu tiedostoihi jotka sisältävät luokkia
+* Aloitussivun tiedosto kutsuu näitä luokkia
+  - Pelillä on toimiva aloitussivu
+  - Labyrinttipeli toimii
+  
