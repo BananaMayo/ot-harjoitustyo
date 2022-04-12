@@ -9,3 +9,37 @@ Sovellus on toiminnallisuudeltaan testattu Python-versiolla `3.8`
 * [Vaatimusmäärittely](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/dokumentaatio/Vaatimusm%C3%A4%C3%A4rittely.md#grejor)
 * [Tuntikirjanpito](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md#mera-grejor)
 * [Changelog](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/dokumentaatio/Changelog.md)
+
+
+## Asennus
+1. Riippuvuuksien asennus komennolla:
+```
+$ poetry install
+```
+2. Vaadittavat alustustoimenpiteet suoritetaan komennolla:
+```
+$ poetry run invoke 
+```
+3. Sovelluksen käynnistäminen komennolla:
+```
+$ poetry run invoke start
+```
+
+## Toiminnot komentorivillä
+### Ohjelman suorittaminen
+Ohjelman pystyy suorittamaan komennolla:
+```
+$ poetry run invoke start
+```
+### Testaaminen
+Ohjelman pystyy testaamaan komennolla:
+```
+$ poetry run invoke test
+```
+### Testikattavuus
+Testikattavuuden generointi komennolla:
+```
+$ poetry run invoke coverage-report
+```
+Raportti löytyy hakemistosta ***htmlcov***
+
