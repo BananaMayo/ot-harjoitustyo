@@ -16,11 +16,7 @@ Sovellus on toiminnallisuudeltaan testattu Python-versiolla `3.8`
 ```
 $ poetry install
 ```
-2. Vaadittavat alustustoimenpiteet suoritetaan komennolla:
-```
-$ poetry run invoke 
-```
-3. Sovelluksen käynnistäminen komennolla:
+2. Sovelluksen käynnistäminen komennolla:
 ```
 $ poetry run invoke start
 ```
