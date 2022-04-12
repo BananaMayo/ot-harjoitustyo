@@ -17,4 +17,6 @@
 * Aloitussivun tiedosto kutsuu näitä luokkia
   - Pelillä on toimiva aloitussivu
   - Labyrinttipeli toimii
-  
+ * Pelin pystyy käynnistämään `poetry run invoke start` -komennolla
+ * Testin saa suoritettua `poetry run invoke test` -komennolla
+ * Testikattavuus `poetry run invoke coverage-report` -komennolla
