@@ -2,7 +2,7 @@
 
 MazeGame on pygamella toteutettu hasuka pieni peli. Pelissä on labyrintti jossa tavoitteena on päästä ulos, löytämällä uloskäynti.
 
-## Python-versiosta
+## Python-versio
 Sovellus on toiminnallisuudeltaan testattu Python-versiolla `3.8`
 
 ## Dokumentaatio
