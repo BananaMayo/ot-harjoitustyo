@@ -2,7 +2,8 @@ import os
 import sys
 import random
 import pygame
-from labyrinth import Game1
+from game_loop import GameLoop
+
 
 MainClock = pygame.time.Clock()
 from pygame.locals import *
@@ -21,7 +22,7 @@ def menu_text(text, font, color, surface, x, y):
     textrect.topleft = (x,y)
     surface.blit(textobject, textrect)
 
-
+theGame = GameLoop()
 click = False
 
 def main_menu():
@@ -35,7 +36,7 @@ def main_menu():
 
         if game1_button.collidepoint((mx, my)):
             if click:
-                Game1()
+                theGame.on_execute()
 
         pygame.draw.rect(screen, (255, 255, 255), game1_button)
         menu_text('Labyrintti-peli', fontti, (0, 0, 0), screen, 260, 127)
@@ -57,3 +58,4 @@ def main_menu():
         MainClock.tick(60)
 
 main_menu()
+    

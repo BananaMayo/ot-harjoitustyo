@@ -1,7 +1,7 @@
 import unittest
 import pygame
 import sys
-from labyrinth import Game1
+from game_loop import GameLoop
 
 class Player(object):
 
@@ -22,7 +22,7 @@ class Player(object):
 
 class TestGame1(unittest.TestCase):
         def setUp(self):
-            self.peli = Game1()
+            self.peli = GameLoop()
             
         def test_aloituspaikka(self):
             pelaaja = Player()
