@@ -1,9 +1,6 @@
 import pygame
 from levels import walls
 
-### Olen käyttänyt pylint-disable:a tässä sillä en
-### ymmärrä miksi se huomauttaa tuollaisista
-
 class Player:
     def __init__(self):
         self.rect = pygame.Rect(32, 32, 16, 16)

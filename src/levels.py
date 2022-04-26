@@ -9,7 +9,7 @@ class Wall:
 level = [
         "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
         "HHH   H   H           H                H",
-        "H   H E H HHHHHH H HH   HHHHHHHHHHHHHH H",
+        "H   H   H HHHHHH H HH   HHHHHHHHHHHHHH H",
         "HH HHHHH       H  H H H H   H       H  H",
         "H   H        HHHH H H HHH H H HHHHH H HH",
         "H HHH  HHHH       H       H H H   H H  H",
@@ -35,6 +35,6 @@ level = [
         "H  H    H HH HH  HHH  HH HHHHH H H H   H",
         "H   HHH H H HH      H H     HH   H     H",
         "H     HHH H  HHHHHH H HHHHH   H  HH H  H",
-        "H HH     HH         H       H      H   H",
+        "H HH     HH         H       HE     H   H",
         "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
     ]

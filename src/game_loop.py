@@ -53,7 +53,6 @@ class GameLoop:
         pygame.Rect(157, 316, 19, 19),pygame.Rect(538, 446, 19, 19)
         ]
 
-
     def on_init(self):
         self._screen = pygame.display.set_mode((self.width, self.height))
         self._running = True

@@ -1,7 +1,6 @@
 import os
 import sys
 import pygame
-#from pygame.locals import *
 from game_loop import GameLoop
 
 ### Olen käyttänyt pylint-disable:a tässä sillä
