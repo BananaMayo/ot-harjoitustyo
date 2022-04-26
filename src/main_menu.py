@@ -1,13 +1,15 @@
 import os
 import sys
 import pygame
-from pygame.locals import *
+#from pygame.locals import *
 from game_loop import GameLoop
 
 ### Olen käyttänyt pylint-disable:a tässä sillä
 ### en ymmärrä miksi se huomauttaa tuollaisista
 ### esim. pygamen init() tai pygame."joku näppäin"
 ### Jos tälle on jokin hyvä korjaus niin voisitteko laittaa siitä viestiä
+
+### 'defined outside __init__' tätä en ymmärrä josta pylint valittaa?
 
 MainClock = pygame.time.Clock()
 labyrinth = GameLoop()
@@ -27,22 +29,26 @@ class Menu:
         os.environ["SDL_VIDEO_CENTERED"] = "1"
 
     def menu_text(self, text, font, color, surface, x, y): # pylint: disable=invalid-name
-        self.textobject = font.render(text, 1, color)
-        self.textrect = self.textobject.get_rect()
+        self.textobject2 = font.render(text, 1, color) # pylint: disable=attribute-defined-outside-init
+        self.textrect = self.textobject2.get_rect() # pylint: disable=attribute-defined-outside-init
         self.textrect.topleft = (x,y)
-        surface.blit(self.textobject, self.textrect)
+        surface.blit(self.textobject2, self.textrect)
 
     def on_render(self):
         self._screen.fill((39, 39, 39))
-        self.fontti = pygame.font.SysFont(None, 25)
-        pygame.draw.rect(self._screen, (255, 255, 255), self.game1_button)
-        self.menu_text('main menu', self.fontti, (255, 255, 255), self._screen, 285, 20)
-        self.menu_text('Labyrintti-peli', self.fontti, (0, 0, 0), self._screen, 260, 127)
+        self.fontti = pygame.font.SysFont(None, 25) # pylint: disable=attribute-defined-outside-init
+        self.fontti2 = pygame.font.SysFont(None, 30) # pylint: disable=attribute-defined-outside-init
+        self.edge_for_button = pygame.Rect(242.5, 117.5, 155, 36.5) # pylint: disable=attribute-defined-outside-init
+        pygame.draw.rect(self._screen, (0, 0, 0), self.edge_for_button)
+        pygame.draw.rect(self._screen, (117, 117, 117), self.game1_button)
+        self.menu_text('Welcome!', self.fontti2, (255, 255, 255), self._screen, 270, 30)
+        self.menu_text('Press the button to start the game', self.fontti, (117, 117, 117), self._screen, 176, 85)
+        self.menu_text('MazeGame', self.fontti, (0, 0, 0), self._screen, 273, 127)
         pygame.display.update()
 
     def on_button(self):
         mx, my = pygame.mouse.get_pos()  # pylint: disable=invalid-name
-        self.game1_button = pygame.Rect(245, 120, 150, 30)
+        self.game1_button = pygame.Rect(245, 120, 150, 30) # pylint: disable=attribute-defined-outside-init
         if self.game1_button.collidepoint((mx, my)): # pylint: disable=invalid-name
             if self.click:
                 labyrinth.on_execute()
