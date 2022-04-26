@@ -7,17 +7,17 @@ Sovellus tulee olemaan Pygame:lla toteutettu peli. Peli tulee olemaan labyrintti
 ## Pelin tarjoamat toiminnallisuudet
 
 ### Pääsivu
-- Sovelluksessa tulee olemaan pääsivu 
-- Pääsivulla tulee olemaan nappi (*voi olla kaksi jos kerkeän tehdä toisen tason*) josta painamalla pääsee aloittamaan pelin
+- [x] - Sovelluksessa tulee olemaan pääsivu
+- [x] - Pääsivulla tulee olemaan nappi (*voi olla kaksi jos kerkeän tehdä toisen tason*) josta painamalla pääsee aloittamaan pelin
 
 ### Peli/Taso
-- Pelissä tulee olemaan labyrintti, pelaaja itse on neliön muotoinen hahmo jonka täytyy päästä labyrintitstä ulos saavuttamalla maali
-- Pelissä tulee olemaan kolikoita joista saa pisteitä, ja pisteet näkyvät pelaajalle ruudulla
-- Maali tulee olemaan erikseen merkittynä
+- [x] - Pelissä tulee olemaan labyrintti, pelaaja itse on neliön muotoinen hahmo jonka täytyy päästä labyrintitstä ulos saavuttamalla maali
+- [x] - Pelissä tulee olemaan kolikoita joista saa pisteitä, ja pisteet näkyvät pelaajalle ruudulla
+- [x] - Maali tulee olemaan erikseen merkittynä
 - Pelaajalta mitataan aika
 
 ### Loppusivu
-- Kun pelaaja on saavuttanut maalin saa hän näkyvilleen loppusivun jossa lukee pelaajan aika
+- [x] - Kun pelaaja on saavuttanut maalin saa hän näkyvilleen loppusivun jossa lukee pelaajan aika **(Osittain vaiheessa)**
 
 ## Jatkokehitysideoita
 - Peliin lisätään tasoja, jotka vaihtelevat vaikeustasossaan

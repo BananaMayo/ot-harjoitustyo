@@ -20,3 +20,14 @@
  * Pelin pystyy käynnistämään `poetry run invoke start` -komennolla
  * Testin saa suoritettua `poetry run invoke test` -komennolla
  * Testikattavuus `poetry run invoke coverage-report` -komennolla
+
+## Viikko 5
+
+* Peliin on lisätty lopetussivu, jossa tulisi näkyä pelin valmistuttua:
+    * Kerätyt kolikot
+    * Pelattu aika
+    * **Exit**-painike
+    * **Restart**-painike
+* Lopetussivulta olisi ajatus pystyä käynnistämään peli uudelleen mutta se on vielä vaiheessa
+* Korjaillut pylintin huomauttamia kohtia, muutamilla epäselvyyksillä
+* Pelissä on nyt kolikoita joita pelaaja pystyy keräämään, niiden sijainti saattaa muuttua
