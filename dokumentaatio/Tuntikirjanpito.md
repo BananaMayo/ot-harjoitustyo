@@ -10,5 +10,5 @@
 | 5.4  | 3  | Viikko 3 harjoitustyön tehtävät |
 | 10.4| 4 | Tutustunut lisää pygameen|
 | 11.4| 5 | Eriyttänyt sovelluslogiikkaa ja käyttöliittymää
-| 12.4 | ? | Viikon 4 harjoitustyö tehtäviä |
-|yht | 24.5| |
+| 12.4 | 3 | Viikon 4 harjoitustyö tehtäviä |
+|yht | 27.5| |
