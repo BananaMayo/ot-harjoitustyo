@@ -11,4 +11,7 @@
 | 10.4| 4 | Tutustunut lisää pygameen|
 | 11.4| 5 | Eriyttänyt sovelluslogiikkaa ja käyttöliittymää
 | 12.4 | 3 | Viikon 4 harjoitustyö tehtäviä |
-|yht | 27.5| |
+| 21.4 | 2 | Tutustunut erilaisiin pygame tyyppisiin peleihin|
+| 24.4 | 2 | Korjaillut pylint virheitä|
+| 26.4 | 4 | Tehnyt viikko deadlineen kuuluvia tehtäviä sekä lisännyt peliin näkyvyyttä|
+|yht | 35.5| |
