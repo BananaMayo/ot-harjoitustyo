@@ -1,9 +1,9 @@
+import time
 import os
-#import time
 import pygame
 from levels import walls, Wall, level
 from player import Player
-from end_page import End
+import end_page
 
 ### Olen käyttänyt pylint-disable:a tässä sillä
 ### en ymmärrä miksi se huomauttaa tuollaisista
@@ -11,8 +11,13 @@ from end_page import End
 ### Jos tälle on jokin hyvä korjaus niin voisitteko laittaa siitä viestiä, kiitos.
 
 GameClock = pygame.time.Clock()
-ending = End()
+ending = end_page.End()
 
+"""
+Tämä luo sienät peliin ja sijoittaa maalin labyrinttiin
+'H' = seinä
+'E' = maali
+"""
 X = Y = 0
 for row in level:
     for col in row:
@@ -25,12 +30,25 @@ for row in level:
     X = 0
 
 player = Player()
-#Player_time = 0
 
 class GameLoop:
+    """
+    Pelin MazeGame luokka, sisältää useampia funktioita
+
+    Pelissä näkyy labyrintti ja maali sekä kerättävät
+    kolikot, myös kolikoiden määrä ja aika näkyy
+    """
     width = 640
     height = 480
     def __init__(self):
+        """
+        Funktio alustaa kolikot
+
+        Näytön sekä pelin boolean-arvot määriteltynä
+
+        Kolikoiden sijainnit listassa
+        Kolikoiden summa on 0, kasvaa aina kymmenellä
+        """
         self._running = True
         self._screen = None
         self.sum_coin = 0
@@ -50,22 +68,39 @@ class GameLoop:
         pygame.Rect(526, 174, 19, 19),pygame.Rect(494, 121, 19, 19),
         pygame.Rect(527, 79, 19, 19),pygame.Rect(527, 142, 19, 19),
         pygame.Rect(497, 283, 19, 19),pygame.Rect(14, 446, 19, 19),
-        pygame.Rect(157, 316, 19, 19),pygame.Rect(538, 446, 19, 19)
+        pygame.Rect(157, 316, 19, 19),pygame.Rect(538, 446, 19, 19),
+        pygame.Rect(382, 270, 19, 19),pygame.Rect(336, 445, 19, 19),
+        pygame.Rect(255, 16, 19, 19)
         ]
 
     def on_init(self):
+        """
+        Näytön alustus ja otsikko
+        """
+        self.Player_time = 0
         self._screen = pygame.display.set_mode((self.width, self.height))
         self._running = True
         os.environ["SDL_VIDEO_CENTERED"] = "1"
         pygame.display.set_caption("Find exit!")
 
     def game_text(self, text, font, color, surface, x, y): # pylint: disable=invalid-name
+        """
+        Pelin tekstiä varten tehdyt määrittelyt
+
+        Funktion avulla pelissä näkyy kolikoiden
+        määrä sekä aika
+        """
         self.textobject = font.render(text, 1, color) # pylint: disable=attribute-defined-outside-init
         self.textrect = self.textobject.get_rect() # pylint: disable=attribute-defined-outside-init
         self.textrect.topleft = (x,y)
         surface.blit(self.textobject, self.textrect)
 
     def on_render(self):
+        """
+        Näytön värit, fontti, teksti, kolikot, pelaajan hahmo ja maali
+
+        Näytön virkistys
+        """
         self._screen.fill((79, 79, 79))
         self.fontti = pygame.font.SysFont(None, 20) # pylint: disable=attribute-defined-outside-init
         for wall in walls:
@@ -75,10 +110,17 @@ class GameLoop:
         for _c in self.coins:
             self._screen.blit(self.coin_image,(_c[0], _c[1]))
         self.game_text('Coins: '+str(self.sum_coin), self.fontti, (255,215,0), self._screen, 4, 2)
+        self.game_text('Time: '+f'{self.Player_time:.2f}', self.fontti, (255,215,0), self._screen, 70, 2)
         pygame.display.flip()
         GameClock.tick(360)
 
     def on_moving(self):
+        """
+        Näppäinten toiminnot, pelin hahmo liikkuu +-2 y tai x
+        suuntaan riippuen painikkeesta
+
+        Hahmoa liikutetaan nuolinäppäimillä
+        """
         key = pygame.key.get_pressed()
         if key[pygame.K_LEFT]: # pylint: disable=no-member
             player.move(-2, 0)
@@ -90,6 +132,9 @@ class GameLoop:
             player.move(0, 2)
 
     def on_events(self):
+        """
+        Events; poistuminen ruksilla tai ESC-painikkeella
+        """
         for event in pygame.event.get():
             if event.type == pygame.QUIT: # pylint: disable=no-member
                 self._running = False
@@ -98,22 +143,30 @@ class GameLoop:
                     self._running = False
 
     def on_execute(self):
+        """
+        Pelin käynnistyminen, kutsuu aikaisemmin
+        määriteltyjä funktioita toimiakseen
+
+        Kolikoiden toiminta määriteltynä, summa += 10, osuman
+        jälkeen kolikko poistetaan
+
+        Maali määriteltynä, peli päättyy kun hahmo osuu maaliin
+        ja pelaaja uudelleenohjataan lopetussivulle
+        """
         if self.on_init() is False:
             self._running = False
 
         while self._running:
             GameClock.tick(60)
-            #self.start_time = time.time()
+            self.start_time = time.time()
             for _c in self.coins:
                 if player.rect.colliderect(_c):
                     self.sum_coin += 10
                     self.coins.remove(_c)
             if player.rect.colliderect(end_rect):
                 #self.elapsed_time = time.time() - self.start_time
-                #Player_time += self.elapsed_time
+                self.Player_time += time.time()
                 ending.end_page()
-
-                #sys.exit()
 
             self.on_events()
             self.on_moving()

@@ -2,7 +2,14 @@ import pygame
 walls = []
 
 class Wall:
+    """
+    Luokka muodostaa pelissä olevat seinät
+    'Level' säilyttää seinien sijainnit ja maalin paikan
+    """
     def __init__(self, pos):
+        """
+        Funktio määrittää seinän sijainnin sekä pikseli-koon
+        """
         walls.append(self)
         self.rect = pygame.Rect(pos[0], pos[1], 16, 16)
 

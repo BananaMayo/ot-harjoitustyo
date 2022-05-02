@@ -14,13 +14,22 @@ MainClock = pygame.time.Clock()
 labyrinth = GameLoop()
 
 class Menu:
-
+    """
+    Luokka, jonka avulla peli käynnistyy. Luo pääsivun josta
+    pääsee navigoimaan itsensä peliin.
+    """
     def __init__(self):
+        """
+        Pääsivun alustus
+        """
         self._running = True
         self._screen = None
         self.click = False
 
     def on_init(self):
+        """
+        Pygamen alustus ja näytön koon asetukset
+        """
         pygame.init() # pylint: disable=no-member
         self._screen = pygame.display.set_mode((640, 480))
         self._running = True
@@ -28,12 +37,22 @@ class Menu:
         os.environ["SDL_VIDEO_CENTERED"] = "1"
 
     def menu_text(self, text, font, color, surface, x, y): # pylint: disable=invalid-name
+        """
+        Funktio määrittää lisättävän tekstin
+
+        Tämän avulla teksti näkyy pääsivulla
+        """
         self.textobject2 = font.render(text, 1, color) # pylint: disable=attribute-defined-outside-init
         self.textrect = self.textobject2.get_rect() # pylint: disable=attribute-defined-outside-init
         self.textrect.topleft = (x,y)
         surface.blit(self.textobject2, self.textrect)
 
     def on_render(self):
+        """
+        Funktio renderöi pääsivun ilmeen
+
+        Lisää tekstiä sekä luo painikkeen peliä varten
+        """
         self._screen.fill((39, 39, 39))
         self.fontti = pygame.font.SysFont(None, 25) # pylint: disable=attribute-defined-outside-init
         self.fontti2 = pygame.font.SysFont(None, 30) # pylint: disable=attribute-defined-outside-init
@@ -46,6 +65,12 @@ class Menu:
         pygame.display.update()
 
     def on_button(self):
+        """
+        Funktio määrittää hiiren painalluksen toiminnon
+        peli-painikkeen kohdalla
+
+        Painallus käynnistää pelin
+        """
         mx, my = pygame.mouse.get_pos()  # pylint: disable=invalid-name
         self.game1_button = pygame.Rect(245, 120, 150, 30) # pylint: disable=attribute-defined-outside-init
         if self.game1_button.collidepoint((mx, my)): # pylint: disable=invalid-name
@@ -53,6 +78,10 @@ class Menu:
                 labyrinth.on_execute()
 
     def events(self):
+        """
+        Events osio, tässä määriytyy mitä kukin
+        painike tekee pelissä
+        """
         self.click = False
         for event in pygame.event.get():
             if event.type == pygame.QUIT: # pylint: disable=no-member
@@ -67,6 +96,10 @@ class Menu:
                     self.click = True
 
     def main_menu(self):
+        """
+        Funktio kutsuu aiempia funktioita jotta pääsivun
+        sekä pelin saa toimimaan
+        """
         if self.on_init() is False:
             self._running = False
 

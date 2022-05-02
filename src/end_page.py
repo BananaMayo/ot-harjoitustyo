@@ -1,9 +1,7 @@
 import os
 import sys
 import pygame
-
 EndClock = pygame.time.Clock()
-
 
 ### Tässä en käsitä miksi pylint valittaa fontteja ja muita
 ### tekstiin liittyviä osia, sanoo että ovat __init__:in ulkopuolella?
@@ -51,7 +49,6 @@ class End: # pylint: disable=too-many-instance-attributes
 #        self.end_page_text('RESTART', self.fontti, (0, 0, 0), self._screen, 282, 237)
         pygame.display.update()
 
-
     def on_button(self):
         mx, my = pygame.mouse.get_pos() # pylint: disable=invalid-name
         self.to_main_menu = pygame.Rect(245, 190, 150, 30) # pylint: disable=attribute-defined-outside-init
@@ -68,7 +65,6 @@ class End: # pylint: disable=too-many-instance-attributes
 #                pass
 #                pygame.quit() # pylint: disable=no-member
 #                sys.exit()
-
 
     def events(self):
         self.click3 = False
