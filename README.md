@@ -2,6 +2,8 @@
 
 MazeGame on pygamella toteutettu hasuka pieni peli. Pelissä on labyrintti jossa tavoitteena on päästä ulos, löytämällä uloskäynti.
 
+#### Pääset kokeilemaan peliä lataamalla tiedostot täältä: [Release](https://github.com/BananaMayo/ot-harjoitustyo/releases)
+
 ## Python-versio
 Sovellus on toiminnallisuudeltaan testattu Python-versiolla `3.8`
 
