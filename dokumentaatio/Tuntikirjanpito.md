@@ -14,4 +14,7 @@
 | 21.4 | 2 | Tutustunut erilaisiin pygame tyyppisiin peleihin|
 | 24.4 | 2 | Korjaillut pylint virheitä|
 | 26.4 | 4 | Tehnyt viikko deadlineen kuuluvia tehtäviä sekä lisännyt peliin näkyvyyttä|
-|yht | 35.5| |
+| 29.4 | 2 | Selvittänyt miten mittaan ajan pelissä |
+| 2.5 | 3 | Työstänyt repositoriota, mm. dokumentaatiota |
+| 3.5 | 4 | Aika, kolikoiden summa, restart-painike ja testikattavuus| 
+|yht | 44.5| |
