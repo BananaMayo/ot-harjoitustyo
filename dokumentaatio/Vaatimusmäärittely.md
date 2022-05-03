@@ -14,10 +14,10 @@ Sovellus tulee olemaan Pygame:lla toteutettu peli. Peli tulee olemaan labyrintti
 - [x] - Pelissä tulee olemaan labyrintti, pelaaja itse on neliön muotoinen hahmo jonka täytyy päästä labyrintitstä ulos saavuttamalla maali
 - [x] - Pelissä tulee olemaan kolikoita joista saa pisteitä, ja pisteet näkyvät pelaajalle ruudulla
 - [x] - Maali tulee olemaan erikseen merkittynä
-- Pelaajalta mitataan aika
+- [x] - Pelaajalta mitataan aika
 
 ### Loppusivu
-- [x] - Kun pelaaja on saavuttanut maalin saa hän näkyvilleen loppusivun jossa lukee pelaajan aika **(Osittain vaiheessa)**
+- [x] - Kun pelaaja on saavuttanut maalin saa hän näkyvilleen loppusivun jossa lukee pelaajan aika
 
 ## Jatkokehitysideoita
 - Peliin lisätään tasoja, jotka vaihtelevat vaikeustasossaan
