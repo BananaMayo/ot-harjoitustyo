@@ -31,3 +31,14 @@
 * Lopetussivulta olisi ajatus pystyä käynnistämään peli uudelleen mutta se on vielä vaiheessa
 * Korjaillut pylintin huomauttamia kohtia, muutamilla epäselvyyksillä
 * Pelissä on nyt kolikoita joita pelaaja pystyy keräämään, niiden sijainti saattaa muuttua
+
+## Viikko 6
+
+* Pelin lopetussivulle on nyt lisätty:
+    * Kerättyjen kolikoiden summa
+    * Pelattu aika
+    * **Exit**-painike
+* Lisäsin muutaman testin testikattavuutta varten
+* Korjaillut pylintiä
+* **Restart**-painike lisätty mutta ei vielä täysin toiminnassa, jokin bugi tällä hetkellä
+* Muutellut joidenkin kolikoiden sijainteja
