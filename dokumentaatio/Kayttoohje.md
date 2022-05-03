@@ -31,7 +31,9 @@ yläkulmassa. Maali on merkattua liilalla värillä, pelaaja itse on vaaleanpuna
 ## Lopetussivu
 Tämä sivu on keskeneräinen:
 
-![image](https://user-images.githubusercontent.com/101586122/166221906-59a1f2f2-6c9d-4dfe-b2d9-307b7740113a.png)
+![image](https://user-images.githubusercontent.com/101586122/166506866-2cda5983-abb1-4c76-ae49-141fa20ef97e.png)
 
-Lopetussivulla tulisi valmistuttua näkyä kolikoiden määrä, pelaajan aika,
-Restart-painike ja Exit-painike.
+Lopetussivulla näkyy pelaajan aika sekä kerättyjen kolikoiden summa.
+Exit-painikkeen avulla pelaaja psytyy poistumaan pelistä. 
+
+**Restart-painike ei vielä toiminnassa**
