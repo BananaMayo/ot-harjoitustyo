@@ -38,6 +38,7 @@
     * Kerättyjen kolikoiden summa
     * Pelattu aika
     * **Exit**-painike
+* Docstring-dokumentaatio aloitettu
 * Lisäsin muutaman testin testikattavuutta varten
 * Korjaillut pylintiä
 * **Restart**-painike lisätty mutta ei vielä täysin toiminnassa, jokin bugi tällä hetkellä
