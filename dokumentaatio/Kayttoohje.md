@@ -23,7 +23,7 @@ Pääsivulta pääsee käynnistämään pelin painamalla 'MazeGame'-painiketta.
 ## Pelinäkymä
 Pelinäkymä on seuraavanlainen:
 
-![image](https://user-images.githubusercontent.com/101586122/166221321-33bdae02-e024-4350-a727-7e7f4639a9f6.png)
+![image](https://user-images.githubusercontent.com/101586122/166507570-9673e33d-3295-42ea-9004-2326e58c73f9.png)
 
 Pelaaja pystyy liikkumaan nuolinäppäimillä. Kolikkoja pystyy keräämään ja kolikoiden määrä näkyy vasemmassa
 yläkulmassa. Maali on merkattua liilalla värillä, pelaaja itse on vaaleanpunainen.
