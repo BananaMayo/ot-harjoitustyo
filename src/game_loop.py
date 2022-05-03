@@ -5,18 +5,13 @@ from levels import walls, Wall, level
 from player import Player
 import end_page
 
-### Olen käyttänyt pylint-disable:a tässä sillä
-### en ymmärrä miksi se huomauttaa tuollaisista
-### esim. pygamen init() tai pygame."joku näppäin" (pygame.QUIT)
-### Jos tälle on jokin hyvä korjaus niin voisitteko laittaa siitä viestiä, kiitos.
-
 GameClock = pygame.time.Clock()
 ending = end_page.End()
 
 """
-Tämä luo sienät peliin ja sijoittaa maalin labyrinttiin
+Tämä luo sienät peliin ja sijoittaa uloskäynnin labyrinttiin
 'H' = seinä
-'E' = maali
+'E' = uloskäynti
 """
 X = Y = 0
 for row in level:
@@ -32,10 +27,12 @@ for row in level:
 player = Player()
 
 class GameLoop:
+    sum_coin = 0
+    Player_time = 0
     """
     Pelin MazeGame luokka, sisältää useampia funktioita
 
-    Pelissä näkyy labyrintti ja maali sekä kerättävät
+    Pelissä näkyy labyrintti ja uloskäynti sekä kerättävät
     kolikot, myös kolikoiden määrä ja aika näkyy
     """
     width = 640
@@ -51,7 +48,7 @@ class GameLoop:
         """
         self._running = True
         self._screen = None
-        self.sum_coin = 0
+
         self.coin_image = pygame.image.load('src/coin/coin_0.png')
         self.coins = [pygame.Rect(550, 14, 19, 19),
         pygame.Rect(590, 14, 19, 19),pygame.Rect(510, 14, 19, 19),
@@ -77,7 +74,6 @@ class GameLoop:
         """
         Näytön alustus ja otsikko
         """
-        self.Player_time = 0
         self._screen = pygame.display.set_mode((self.width, self.height))
         self._running = True
         os.environ["SDL_VIDEO_CENTERED"] = "1"
@@ -97,7 +93,7 @@ class GameLoop:
 
     def on_render(self):
         """
-        Näytön värit, fontti, teksti, kolikot, pelaajan hahmo ja maali
+        Näytön värit, fontti, teksti, kolikot, pelaajan hahmo ja ulosäynti
 
         Näytön virkistys
         """
@@ -110,7 +106,7 @@ class GameLoop:
         for _c in self.coins:
             self._screen.blit(self.coin_image,(_c[0], _c[1]))
         self.game_text('Coins: '+str(self.sum_coin), self.fontti, (255,215,0), self._screen, 4, 2)
-        self.game_text('Time: '+f'{self.Player_time:.2f}', self.fontti, (255,215,0), self._screen, 70, 2)
+        self.game_text('Time: '+f'{self.elapsed_time:.1f}', self.fontti, (255,215,0), self._screen, 85, 2)
         pygame.display.flip()
         GameClock.tick(360)
 
@@ -142,6 +138,7 @@ class GameLoop:
                 if event.key == pygame.K_ESCAPE: # pylint: disable=no-member
                     self._running = False
 
+
     def on_execute(self):
         """
         Pelin käynnistyminen, kutsuu aikaisemmin
@@ -150,22 +147,27 @@ class GameLoop:
         Kolikoiden toiminta määriteltynä, summa += 10, osuman
         jälkeen kolikko poistetaan
 
-        Maali määriteltynä, peli päättyy kun hahmo osuu maaliin
+        Uloskäynti määriteltynä, peli päättyy kun hahmo osuu uloskäyntiin
         ja pelaaja uudelleenohjataan lopetussivulle
         """
+
         if self.on_init() is False:
             self._running = False
 
+        self.start_time = time.time()
+
         while self._running:
             GameClock.tick(60)
-            self.start_time = time.time()
+
+            self.elapsed_time = time.time() - self.start_time
+
             for _c in self.coins:
                 if player.rect.colliderect(_c):
-                    self.sum_coin += 10
+                    GameLoop.sum_coin += 10
                     self.coins.remove(_c)
+
             if player.rect.colliderect(end_rect):
-                #self.elapsed_time = time.time() - self.start_time
-                self.Player_time += time.time()
+                GameLoop.Player_time += self.elapsed_time
                 ending.end_page()
 
             self.on_events()

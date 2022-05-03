@@ -1,15 +1,9 @@
 import os
 import sys
 import pygame
+import game_loop
+
 EndClock = pygame.time.Clock()
-
-### Tässä en käsitä miksi pylint valittaa fontteja ja muita
-### tekstiin liittyviä osia, sanoo että ovat __init__:in ulkopuolella?
-### käytin disablea sillä noista tulee yli kymmenen virhettä enkä tiedä
-### mikä on oikea tapa korjata.
-
-
-#GoBack = Menu()
 
 class End: # pylint: disable=too-many-instance-attributes
     def __init__(self):
@@ -34,37 +28,29 @@ class End: # pylint: disable=too-many-instance-attributes
         self.fontti = pygame.font.SysFont(None, 26) # pylint: disable=attribute-defined-outside-init
         self.fontti2 = pygame.font.SysFont(None, 30) # pylint: disable=attribute-defined-outside-init
         self.fontti3 = pygame.font.SysFont(None, 32) # pylint: disable=attribute-defined-outside-init
-        pygame.draw.rect(self._screen, (165, 42, 42), self.to_main_menu)
-#        pygame.draw.rect(self._screen, (0, 205, 205), self.restart)
-
-        self.end_page_text('''Congratiulations, you made it!
-        ''', self.fontti2, (0, 0, 0), self._screen, 180, 22)
-        self.end_page_text('''Congratiulations, you made it!
-        ''', self.fontti2, (34,139,34), self._screen, 178, 20)
-        self.end_page_text("""Your time was:
-        """, self.fontti, (255, 255, 255), self._screen, 245, 60)
-        self.end_page_text('''Your total coins are:
-        ''', self.fontti, (205, 173, 0), self._screen, 245, 90)
+        pygame.draw.rect(self._screen, (165, 42, 42), self.exit)
+        pygame.draw.rect(self._screen, (0, 205, 205), self.restart)
+        self.end_page_text("Congratiulations, you made it!", self.fontti2, (0, 0, 0), self._screen, 180, 22) # pylint: disable=line-too-long
+        self.end_page_text("Congratiulations, you made it!", self.fontti2, (34,139,34), self._screen, 178, 20) # pylint: disable=line-too-long
+        self.end_page_text("Your time was:  " + f'{game_loop.GameLoop.Player_time:.2f}'+ " seconds", self.fontti, (255, 255, 255), self._screen, 215, 60) # pylint: disable=line-too-long
+        self.end_page_text("Your total coins are:  " + str(game_loop.GameLoop.sum_coin), self.fontti, (205, 173, 0), self._screen, 215, 90) # pylint: disable=line-too-long
         self.end_page_text('EXIT', self.fontti, (0, 0, 0), self._screen, 300, 197)
-#        self.end_page_text('RESTART', self.fontti, (0, 0, 0), self._screen, 282, 237)
+        self.end_page_text('RESTART', self.fontti, (0, 0, 0), self._screen, 282, 237)
         pygame.display.update()
 
     def on_button(self):
         mx, my = pygame.mouse.get_pos() # pylint: disable=invalid-name
-        self.to_main_menu = pygame.Rect(245, 190, 150, 30) # pylint: disable=attribute-defined-outside-init
-        if self.to_main_menu.collidepoint((mx, my)):
+
+        self.exit = pygame.Rect(245, 190, 150, 30) # pylint: disable=attribute-defined-outside-init
+        self.restart = pygame.Rect(245, 230, 150, 30) # pylint: disable=attribute-defined-outside-init
+
+        if self.exit.collidepoint((mx, my)):
             if self.click3:
                 pygame.quit() # pylint: disable=no-member
                 sys.exit()
-
-#                GoBack.main_menu()
-
-#        self.restart = pygame.Rect(245, 230, 150, 30)
-#        if self.restart.collidepoint((mx, my)):
-#            if self.click:
-#                pass
-#                pygame.quit() # pylint: disable=no-member
-#                sys.exit()
+        if self.restart.collidepoint((mx, my)):
+            if self.click3:
+                game_loop.GameLoop.on_execute(self)
 
     def events(self):
         self.click3 = False
@@ -72,13 +58,16 @@ class End: # pylint: disable=too-many-instance-attributes
             if event.type == pygame.QUIT: # pylint: disable=no-member
                 pygame.quit() # pylint: disable=no-member
                 sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN: # pylint: disable=no-member
+                if event.button == 1:
+                    self.click3 = True
+
             if event.type == pygame.KEYDOWN: # pylint: disable=no-member
                 if event.key == pygame.K_ESCAPE: # pylint: disable=no-member
                     pygame.quit() # pylint: disable=no-member
                     sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN: # pylint: disable=no-member
-                if event.button == 1:
-                    self.click3 = True
+
 
     def end_page(self):
         if self._on_init() is False:

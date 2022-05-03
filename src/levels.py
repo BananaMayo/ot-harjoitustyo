@@ -41,7 +41,7 @@ level = [
         "HH HHH        HH     H  HH   HHH H  H  H",
         "H  H    H HH HH  HHH  HH HHHHH H H H   H",
         "H   HHH H H HH      H H     HH   H     H",
-        "H     HHH H  HHHHHH H HHHHH   H  HH H  H",
-        "H HH     HH         H       HE     H   H",
+        "H     HHH H  HHHHHH H HHHHH E H  HH H  H",
+        "H HH     HH         H       H      H   H",
         "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
     ]

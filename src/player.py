@@ -1,5 +1,5 @@
 import pygame
-from levels import walls
+import levels
 
 class Player:
 
@@ -26,7 +26,7 @@ class Player:
         self.rect.x += dx # pylint: disable=invalid-name
         self.rect.y += dy # pylint: disable=invalid-name
 
-        for wall in walls:
+        for wall in levels.walls:
             if self.rect.colliderect(wall.rect):
                 if dx > 0:
                     self.rect.right = wall.rect.left

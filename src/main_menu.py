@@ -1,17 +1,10 @@
 import os
 import sys
 import pygame
-from game_loop import GameLoop
-
-### Olen käyttänyt pylint-disable:a tässä sillä
-### en ymmärrä miksi se huomauttaa tuollaisista
-### esim. pygamen init() tai pygame."joku näppäin"
-### Jos tälle on jokin hyvä korjaus niin voisitteko laittaa siitä viestiä
-
-### 'defined outside __init__' tätä en ymmärrä josta pylint valittaa?
+import game_loop
 
 MainClock = pygame.time.Clock()
-labyrinth = GameLoop()
+labyrinth = game_loop.GameLoop()
 
 class Menu:
     """
@@ -24,7 +17,7 @@ class Menu:
         """
         self._running = True
         self._screen = None
-        self.click = False
+        self.click1 = False
 
     def on_init(self):
         """
@@ -74,7 +67,7 @@ class Menu:
         mx, my = pygame.mouse.get_pos()  # pylint: disable=invalid-name
         self.game1_button = pygame.Rect(245, 120, 150, 30) # pylint: disable=attribute-defined-outside-init
         if self.game1_button.collidepoint((mx, my)): # pylint: disable=invalid-name
-            if self.click:
+            if self.click1:
                 labyrinth.on_execute()
 
     def events(self):
@@ -82,7 +75,7 @@ class Menu:
         Events osio, tässä määriytyy mitä kukin
         painike tekee pelissä
         """
-        self.click = False
+        self.click1 = False
         for event in pygame.event.get():
             if event.type == pygame.QUIT: # pylint: disable=no-member
                 pygame.quit() # pylint: disable=no-member
@@ -93,7 +86,7 @@ class Menu:
                     sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN: # pylint: disable=no-member
                 if event.button == 1:
-                    self.click = True
+                    self.click1 = True
 
     def main_menu(self):
         """
