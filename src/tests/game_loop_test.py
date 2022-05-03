@@ -1,7 +1,8 @@
 import unittest
 import pygame
 import sys
-from game_loop import GameLoop
+from game_loop import GameLoop, end_rect
+import end_page
 
 class Player(object):
 
@@ -21,7 +22,7 @@ class Player(object):
         self.rect.y += dy
 
 
-
+endings = end_page.End
 class TestGame1(unittest.TestCase):
         def setUp(self):
             self.peli = GameLoop()
@@ -37,5 +38,10 @@ class TestGame1(unittest.TestCase):
             for coin in self.coins:
                 if pelaaja.rect.colliderect(coin):
                     self.assertEqual(self.sum_coin, +10)
+
+        def test_ending(self):
+            pelaaja = Player()
+            if pelaaja.rect.colliderect(end_rect):
+                self.assertEqual(endings.end_page())
 
 
