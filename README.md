@@ -12,6 +12,7 @@ Sovellus on toiminnallisuudeltaan testattu Python-versiolla `3.8`
 * [Tuntikirjanpito](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md#mera-grejor)
 * [Changelog](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/dokumentaatio/Changelog.md)
 * [Arkkitehtuurikuvaus](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/dokumentaatio/Arkkitehtuuri.md)
+* [Käyttöohje](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/dokumentaatio/Kayttoohje.md)
 
 
 ## Asennus
@@ -43,7 +44,7 @@ $ poetry run invoke coverage-report
 Raportti löytyy hakemistosta ***htmlcov***
 
 ### Pylint
-Tiedoston .pylintrc määrittelemät tarkistukset voi suorittaa komennolla:
+Tiedoston [.pylintrc](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/.pylintrc) määrittelemät tarkistukset voi suorittaa komennolla:
 ```
 $ poetry run invoke lint
 ```

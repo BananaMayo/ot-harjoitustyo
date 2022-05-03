@@ -1,0 +1,8 @@
+title MazeGame sekvenssikaavio
+
+Aloitussivu->Pelinäkymä: Painikkeen kautta
+note left of Aloitussivu: Pelin painike
+Pelinäkymä->Lopetussivu: Labyrintin uloskäynti
+note left of Pelinäkymä: Labyrintissä: kolikot, aika ja uloskäynti
+Lopetussivu->Pelinäkymä: Restart-painike
+note right of Lopetussivu: Aika, Kolikkosumma, Restart ja Exit
