@@ -93,7 +93,7 @@ class GameLoop:
 
     def on_render(self):
         """
-        Näytön värit, fontti, teksti, kolikot, pelaajan hahmo ja ulosäynti
+        Näytön värit, fontti, teksti, kolikot, pelaajan hahmo ja uloskäynti
 
         Näytön virkistys
         """

@@ -25,6 +25,8 @@ class Player(object):
 endings = end_page.End
 class TestGame1(unittest.TestCase):
         def setUp(self):
+            pygame.init()
+            self._running = True
             self.peli = GameLoop()
             self.sum_coin = 0
             self.coins = [pygame.Rect(550, 14, 19, 19)]
@@ -44,4 +46,14 @@ class TestGame1(unittest.TestCase):
             if pelaaja.rect.colliderect(end_rect):
                 self.assertEqual(endings.end_page())
 
+        def test_movement(self):
+            pelaaja = Player()
+            key = pygame.key.get_pressed()
+            if key[pygame.K_LEFT]:
+                self.assertEqual((pelaaja.rect.x), (-2))
+
+        def test_exit(self):
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.assertEqual(self._running == False)
 

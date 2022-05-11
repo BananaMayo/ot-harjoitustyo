@@ -4,26 +4,47 @@ import pygame
 import game_loop
 
 EndClock = pygame.time.Clock()
-
 class End: # pylint: disable=too-many-instance-attributes
+    """Pelin loppusivun luokka
+
+    Loppusivulla näkyy pelattu aika ja kerättyjen
+    kolikoiden summa
+
+    Exit-painike ja Restart-painike
+    """
     def __init__(self):
+        """
+        Näytön sekä pelin boolean-arvot määriteltynä
+        """
         self._running = True
         self._screen = None
         self.click3 = False
 
     def _on_init(self):
+        """
+        Näytön alustus ja otsikko
+        """
         os.environ["SDL_VIDEO_CENTERED"] = "1"
         self._screen = pygame.display.set_mode((640, 480))
         self._running = True
         pygame.display.set_caption("VICTORY!")
 
     def end_page_text(self, text, font, color, surface, X, Y): # pylint: disable=invalid-name
+        """Sivun tekstiä varten tehdyt määrittelyt
+
+        Funktion avulla sivulla näkyy tekstit
+        """
         self.textobj = font.render(text, 1, color) # pylint: disable=attribute-defined-outside-init
         self.textrect = self.textobj.get_rect() # pylint: disable=attribute-defined-outside-init
         self.textrect.topleft = (X,Y)
         surface.blit(self.textobj, self.textrect)
 
     def on_render(self):
+        """
+        Näytön värit, fontti, teksti, kolikot, pelaajan hahmo ja ulosäynti
+
+        Näytön virkistys
+        """
         self._screen.fill((39, 39, 39))
         self.fontti = pygame.font.SysFont(None, 26) # pylint: disable=attribute-defined-outside-init
         self.fontti2 = pygame.font.SysFont(None, 30) # pylint: disable=attribute-defined-outside-init
@@ -39,8 +60,14 @@ class End: # pylint: disable=too-many-instance-attributes
         pygame.display.update()
 
     def on_button(self):
-        mx, my = pygame.mouse.get_pos() # pylint: disable=invalid-name
+        """
+        Funktio määrittää hiiren painalluksen toiminnon
+        Exit- sekä Restart-painikkeiden kohdalla
 
+        self.exit = Exit painike
+        self.restart = Restart-painike
+        """
+        mx, my = pygame.mouse.get_pos() # pylint: disable=invalid-name
         self.exit = pygame.Rect(245, 190, 150, 30) # pylint: disable=attribute-defined-outside-init
         self.restart = pygame.Rect(245, 230, 150, 30) # pylint: disable=attribute-defined-outside-init
 
@@ -48,11 +75,16 @@ class End: # pylint: disable=too-many-instance-attributes
             if self.click3:
                 pygame.quit() # pylint: disable=no-member
                 sys.exit()
+
+        self._restart = game_loop.GameLoop()
         if self.restart.collidepoint((mx, my)):
             if self.click3:
-                game_loop.GameLoop.on_execute(self)
+                self._restart.on_execute()
 
     def events(self):
+        """
+        Events; poistuminen ruksilla tai ESC-painikkeella
+        """
         self.click3 = False
         for event in pygame.event.get():
             if event.type == pygame.QUIT: # pylint: disable=no-member
@@ -70,6 +102,10 @@ class End: # pylint: disable=too-many-instance-attributes
 
 
     def end_page(self):
+        """
+        Funktio kutsuu aiempia funktioita jotta lopetussivun
+        saa toimimaan
+        """
         if self._on_init() is False:
             self._running = False
 
