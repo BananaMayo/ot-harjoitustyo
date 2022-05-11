@@ -1,6 +1,6 @@
 # Käyttöohje 
 
-Projektin saa ladattua sivun **RELEASEN** kautta. Lähdekoodi löytyy `.zip` muodossa
+Projektin saa ladattua sivun [Release 3](https://github.com/BananaMayo/ot-harjoitustyo/releases/tag/viikko7) kautta. Lähdekoodi löytyy `.zip` muodossa
 
 ## Käynnistykseen liittyvät ohjeet
 
