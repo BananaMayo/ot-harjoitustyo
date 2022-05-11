@@ -53,7 +53,7 @@ class Menu:
         pygame.draw.rect(self._screen, (0, 0, 0), self.edge_for_button)
         pygame.draw.rect(self._screen, (117, 117, 117), self.game1_button)
         self.menu_text('Welcome!', self.fontti2, (255, 255, 255), self._screen, 270, 30)
-        self.menu_text('Press the button to start the game', self.fontti, (117, 117, 117), self._screen, 176, 85)
+        self.menu_text('Press the button to start the game', self.fontti, (117, 117, 117), self._screen, 176, 85) # pylint: disable=line-too-long
         self.menu_text('MazeGame', self.fontti, (0, 0, 0), self._screen, 273, 127)
         pygame.display.update()
 

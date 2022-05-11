@@ -76,7 +76,7 @@ class End: # pylint: disable=too-many-instance-attributes
                 pygame.quit() # pylint: disable=no-member
                 sys.exit()
 
-        self._restart = game_loop.GameLoop()
+        self._restart = game_loop.GameLoop() # pylint: disable=attribute-defined-outside-init
         if self.restart.collidepoint((mx, my)):
             if self.click3:
                 self._restart.on_execute()

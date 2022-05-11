@@ -106,7 +106,7 @@ class GameLoop:
         for _c in self.coins:
             self._screen.blit(self.coin_image,(_c[0], _c[1]))
         self.game_text('Coins: '+str(self.sum_coin), self.fontti, (255,215,0), self._screen, 4, 2)
-        self.game_text('Time: '+f'{self.elapsed_time:.1f}', self.fontti, (255,215,0), self._screen, 85, 2)
+        self.game_text('Time: '+f'{self.elapsed_time:.1f}', self.fontti, (255,215,0), self._screen, 85, 2) # pylint: disable=line-too-long
         pygame.display.flip()
         GameClock.tick(360)
 
@@ -154,12 +154,12 @@ class GameLoop:
         if self.on_init() is False:
             self._running = False
 
-        self.start_time = time.time()
+        self.start_time = time.time() # pylint: disable=attribute-defined-outside-init
 
         while self._running:
             GameClock.tick(60)
 
-            self.elapsed_time = time.time() - self.start_time
+            self.elapsed_time = time.time() - self.start_time # pylint: disable=attribute-defined-outside-init
 
             for _c in self.coins:
                 if player.rect.colliderect(_c):
