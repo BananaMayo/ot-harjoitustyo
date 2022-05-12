@@ -38,7 +38,7 @@ käynnistämään peli uudelleen lopetussivulta.
 
   Luokka sisältää useampia funktioita, muun muassa:
   * `on_render(self)` Tämän avulla aika että kolikot näkyvät pelaajalle
-  * `on_button(self)` Tämän avulla Rxit- ja Restart-painike toimii
+  * `on_button(self)` Tämän avulla Exit- ja Restart-painike toimii
   * `end_page(self)` Pääfunktio joka kutsuu edellämainittuja funktioita
 
 ## Sekvenssikaavio
