@@ -29,7 +29,6 @@ Pelaaja pystyy liikkumaan nuolinäppäimillä. Kolikkoja pystyy keräämään ja
 yläkulmassa. Maali on merkattua liilalla värillä, pelaaja itse on vaaleanpunainen.
 
 ## Lopetussivu
-Tämä sivu on keskeneräinen:
 
 ![image](https://user-images.githubusercontent.com/101586122/166506866-2cda5983-abb1-4c76-ae49-141fa20ef97e.png)
 
