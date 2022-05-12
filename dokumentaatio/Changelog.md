@@ -43,3 +43,11 @@
 * Korjaillut pylintiä
 * **Restart**-painike lisätty mutta ei vielä täysin toiminnassa, jokin bugi tällä hetkellä
 * Muutellut joidenkin kolikoiden sijainteja
+
+## Viikko 7
+
+* Lisännyt docstring-dokumentaatiota
+    * Loppusivu
+* Korjaillut sekä lisännyt dokumentaatioon liittyviä tehtäviä
+* Korjaillut sekä viimeistellyt peliä
+* Uusin versio pelistä release-muodossa
