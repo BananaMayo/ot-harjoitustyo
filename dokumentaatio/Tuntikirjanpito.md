@@ -16,5 +16,8 @@
 | 26.4 | 4 | Tehnyt viikko deadlineen kuuluvia tehtäviä sekä lisännyt peliin näkyvyyttä|
 | 29.4 | 2 | Selvittänyt miten mittaan ajan pelissä |
 | 2.5 | 3 | Työstänyt repositoriota, mm. dokumentaatiota |
-| 3.5 | 4 | Aika, kolikoiden summa, restart-painike ja testikattavuus, *Docstring*| 
-|yht | 44.5| |
+| 3.5 | 4 | Aika, kolikoiden summa, restart-painike ja testikattavuus, *Docstring*|
+| 10.5 | 1.5 | Muokannut GitHub dokumentaatiota |
+| 11.5 | 2 | Korjannut peliä ja lisännyt testejä |
+| 12.5 | 1 | Muokannut GitHubia |
+|yht | 49| |
