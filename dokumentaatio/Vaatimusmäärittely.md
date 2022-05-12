@@ -7,11 +7,11 @@ Sovellus tulee olemaan Pygame:lla toteutettu peli. Peli tulee olemaan labyrintti
 ## Pelin tarjoamat toiminnallisuudet
 
 ### Pääsivu
-- [x] - Sovelluksessa on pääsivu joka toivottaa pelaajan tervettuleeksi
+- [x] - Sovelluksessa on pääsivu joka toivottaa pelaajan tervetulleeksi
 - [x] - Pääsivulla on pelin MazeGame painike
 
 ### Peli/Taso
-- [x] - Peli on yksinkertainen 2D labyrintti, pelaaja itse on neliön muotoinen hahmo jonka täytyy päästä labyrintitstä ulos saavuttamalla uloskäynti
+- [x] - Peli on labyrintti, pelaaja itse on neliön muotoinen hahmo jonka tavoitteena on päästä labyrintitstä ulos saavuttamalla uloskäynti
 - [x] - Pelissä on kolikoita joista saa pisteitä (10/kolikko), ja pisteet näkyvät pelaajalle ruudulla
 - [x] - Maali tulee olemaan erikseen merkittynä
 - [x] - Pelaajalta mitataan aika ja aika näkyy pelatessa
