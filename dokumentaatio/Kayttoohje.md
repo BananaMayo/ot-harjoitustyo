@@ -35,5 +35,4 @@ Tämä sivu on keskeneräinen:
 
 Lopetussivulla näkyy pelaajan aika sekä kerättyjen kolikoiden summa.
 Exit-painikkeen avulla pelaaja psytyy poistumaan pelistä. 
-
-**Restart-painike ei vielä toiminnassa**
+Restart-painikkeen avulla pelaaja pystyy pelaamaan uudelleen.
