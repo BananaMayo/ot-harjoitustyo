@@ -20,4 +20,5 @@
 | 10.5 | 1.5 | Muokannut GitHub dokumentaatiota |
 | 11.5 | 2 | Korjannut peliä ja lisännyt testejä |
 | 12.5 | 1 | Muokannut GitHubia |
-|yht | 49| |
+| 15.5 | 0.5 | Dokumentaation viimeistely |
+|yht | 49.5| |
