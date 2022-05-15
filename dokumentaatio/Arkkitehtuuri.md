@@ -19,7 +19,7 @@ käynnistämään peli uudelleen lopetussivulta.
 
 ## Pelin sovelluslogiikka
 
-- **Peli sisältää siis viisi luokkaa. Pelin aloitussivun muodostaa luokka [main_menu.py](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/src/main_menu.py) joka ohjaa peliin painettua sivun painiketta.** 
+- **Peli sisältää siis viisi luokkaa. Pelin aloitussivun muodostaa luokka [main_menu.py](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/src/main_menu.py)-tiedostosta joka ohjaa peliin painettua sivun painiketta.** 
 
   Luokka sisältää useampia funktioita, muun muassa seuraavat:
   * `menu_text(self, text, font, color, surface, x, y)`
@@ -34,12 +34,21 @@ käynnistämään peli uudelleen lopetussivulta.
   * `on_moving(self)` Tämä funktio määrittää liikkumisen
   * `on_execute(self)` Pääfunktio joka kutsuu edellämainittuja funktioita
 
-- **Lopetussivulla on käytössä luokka [end_page.py](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/src/end_page.py).** 
+- **Lopetussivulla on käytössä luokka [end_page.py](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/src/end_page.py)-tiedostosta.** 
 
   Luokka sisältää useampia funktioita, muun muassa:
   * `on_render(self)` Tämän avulla aika että kolikot näkyvät pelaajalle
   * `on_button(self)` Tämän avulla Exit- ja Restart-painike toimii
   * `end_page(self)` Pääfunktio joka kutsuu edellämainittuja funktioita
+
+  
+- **Pelaajan funktiot ovat tallennettuna luokassa Player, joka löytyy [player.py](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/src/player.py)-tiedostosta**
+  * `move(self, dx, dy)` Funktio on osa pelaajan liikkumista
+  * `advance_single_axis(self, dx, dy)` Funktio on osa pelaajan liikkumista
+ 
+- **Tason ulkonäkö ja muoto on tallennettuna luokassa Wall joka löytyy tiedostosta [levels.py](https://github.com/BananaMayo/ot-harjoitustyo/blob/master/src/levels.py)**
+  * `__init__(self, pos)`
+  * Muuttuja `level` pitää huolta tason ulkonäöstä
 
 ## Sekvenssikaavio
 
