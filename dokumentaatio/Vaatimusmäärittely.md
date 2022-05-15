@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Sovellus tulee olemaan Pygame:lla toteutettu peli. Peli tulee olemaan labyrinttipeli jossa matkalla voi kerätä kolikoita ja saada pisteitä missä tavoitteena on päästä labyrintistä ulos, eli saavuttaa maali. Suorituksesta mitataan aika. Ei ole vielä tiedossa tuleeko peli sisältämään vain yhden tason, mahdollisuuksien mukaan tulen tekemään toisen tason. 
+Sovellus on Pygame:lla toteutettu peli. Peli on siis labyrintti jossa matkalla voi kerätä kolikoita ja saada pisteitä missä tavoitteena on päästä labyrintistä ulos, eli saavuttaa uloskäynti. Suorituksesta mitataan aika. Peli ei vielä tässä vaiheessa sisällä enempää kuin yhden tason, mahdollisuuksien mukaan tulen tekemään toisen tason tulevaisuudessa. 
 
 ## Pelin tarjoamat toiminnallisuudet
 
